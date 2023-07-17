@@ -17,10 +17,15 @@ export default {
     methods:{
       getApi(){
           axios.get(store.apiUrl).then(response => {
-                      console.log(response.data.results);
-          store.products = response.data.results
-          console.log(store.products);
-            
+            params:{
+              page: 4
+            }
+            console.log(response.data.results);
+            store.products = response.data.results.data
+            store.loading = false
+            store.lastPage = response.data.results.last_page
+            console.log(store.products);
+              
           })
       }
     },
