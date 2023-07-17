@@ -56,6 +56,8 @@ export default {
 </script>
 <template>
     <h1>Products pagina ({{this.currentPage}} di {{ store.lastPage }})</h1>
+    <button class="btn btn-primary me-4 ms-3" @click="prevPage()">Pagina precedente</button>
+    <button class="btn btn-primary" @click="nextPage()">Pagina successiva</button>
     <p v-if="store.loading" class="m-3">Sta caricando...</p>
     <div class="d-flex flex-wrap">
         <div v-for="product in store.products" class="card">
@@ -65,8 +67,6 @@ export default {
             <a :href="product.link" class="btn btn-primary">GO</a>
         </div>
     </div>
-    <button class="btn btn-primary me-4 ms-3" @click="prevPage()">Pagina precedente</button>
-    <button class="btn btn-primary" @click="nextPage()">Pagina successiva</button>
    
 </template>
 <style scoped>
