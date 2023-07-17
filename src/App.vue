@@ -13,7 +13,7 @@ export default {
       getApi(){
           axios.get(this.apiUrl).then(response => {
                       console.log(response.data);
-          
+      
           })
       }
     },
