@@ -1,7 +1,7 @@
 <script>
 import axios from "axios";
-import ProjectCard from "./components/ProjectCard.vue"
 import {store} from "../src/store"
+import AppHeader from "./components/AppHeader.vue"
 
 export default {
     name: "AppMain",
@@ -12,7 +12,7 @@ export default {
         }
     },
     components:{
-        ProjectCard
+      AppHeader
     },
     methods:{
       getApi(){
@@ -36,9 +36,18 @@ export default {
 </script>
 
 <template>
+
+  <header>
+
+    <AppHeader></AppHeader>
+    
+  </header>
+
   <main>
-      <ProjectCard />
   </main>
+
+  <router-view></router-view>
+
 </template>
 
 <style scoped>
