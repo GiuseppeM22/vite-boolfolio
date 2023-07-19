@@ -1,4 +1,17 @@
-<script></script>
+<script>
+    export default {
+        name: "AppHeader",
+        data() {
+            return {
+            navLinks: [
+                { label: "Home", name: "home" },
+                { label: "About us", name: "about"  },
+                { label: "Projects", name: "projects" },
+            ]
+            }
+        }
+    }
+</script>
 <template>
     <section>
         <nav class="navbar navbar-expand-lg bg-light">
@@ -8,15 +21,9 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul  v-for="link in navLinks" class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about-us">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/projects">Projects</a>
+                            <router-link class="nav-link" :to="{ name: link.name, params: link.params}">{{ link.label }}</router-link>
                         </li>
                     </ul>
                 </div>

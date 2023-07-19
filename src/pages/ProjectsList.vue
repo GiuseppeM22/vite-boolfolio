@@ -23,14 +23,15 @@ export default {
                 };
 
                 axios.get(store.apiUrl, config).then(response => {
-                console.log(response.data.results.current_page);
-                store.products = response.data.results.data
-                store.loading = false
-                store.lastPage = response.data.results.last_page
-                this.currentPage = response.data.results.current_page
-                console.log(store.products);
+                    console.log(response.data.results.current_page);
+                    store.products = response.data.results.data
+                    store.loading = false
+                    store.lastPage = response.data.results.last_page
+                    this.currentPage = response.data.results.current_page
+                    console.log(store.products);
                 
                 })
+
             }
         },
         prevPage(){

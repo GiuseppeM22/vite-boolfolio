@@ -26,7 +26,10 @@ export default {
             store.lastPage = response.data.results.last_page
             console.log(store.products);
               
-          })
+          }).catch(err => {
+              store.loading = false;
+              this.$router.push({ name: 'error', params: { code: 404 } })
+          });
       }
     },
     mounted(){
@@ -40,7 +43,7 @@ export default {
   <header>
 
     <AppHeader></AppHeader>
-    
+
   </header>
 
   <main>
