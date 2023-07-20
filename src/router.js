@@ -4,6 +4,8 @@ import AppHome from './pages/AppHome.vue';
 import AppAbout from './pages/AppAbout.vue';
 import ProjectsList from './pages/ProjectsList.vue';
 import ErrorPage from './pages/ErrorPage.vue'
+import SingleProject from './pages/SingleProject.vue'
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -22,6 +24,11 @@ const router = createRouter({
             path: "/projects",
             name: "projects",
             component: ProjectsList
+        },
+        {
+            path: "/projects/:id",
+            name: "single-projects",
+            component: SingleProject
         },
         {
             path: "/error/:code",

@@ -4,7 +4,6 @@ import axios from "axios";
 
 
 export default {
-    name: "AppMain",
     data() {
         return {
             store,
@@ -62,7 +61,9 @@ export default {
     <p v-if="store.loading" class="m-3">Sta caricando...</p>
     <div class="d-flex flex-wrap">
         <div v-for="product in store.products" class="card">
-            <h5>{{product.name}}</h5>
+            <h3>
+                <router-link :to="{ name:'single-projects', params: {id: product.id} }">{{ product.name }}</router-link>
+            </h3>
             <img :src=" product.image " alt="">
             <p class="card-text">{{product.description}}</p>
             <a :href="product.link" class="btn btn-primary">GO</a>
